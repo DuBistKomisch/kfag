@@ -767,7 +767,7 @@
             "api": "killhalloweenpatriarchinbedlam",
             "icon": "d39573bcc4b8fbaf2d0b1f7cd252b44b538b3626",
             "name": "Sparkling in the Twilight",
-            "description": "Kill The Vampire Patriarch in Bedlam",
+            "description": "Kill The Vampire Patriarch Ringmaster in Bedlam",
             "rate": 3,
             "event": true
           },
@@ -825,7 +825,7 @@
             "api": "kill6zedwithoutreloadingmkb42",
             "icon": "22e824a06d2d3559ac712adf7492028625fa8f41",
             "name": "Historical Remnants",
-            "description": "Kill 6 Zeds with one magazine, without reloading",
+            "description": "Kill 6 Zeds with one magazine on an MKb42, without reloading",
             "rate": 11.6
           },
           {
@@ -901,7 +901,7 @@
             "api": "complete6reaperachievements",
             "icon": "67290efd2abb01e9dbdc3aa8301d0d0e5cf67691",
             "name": "Grim Reaper",
-            "description": "Get the 6 Special Achievements plus 1 Hillbilly Horror Map Achievement to unlock the Grim Reaper",
+            "description": "Get the 6 Special Halloween Achievements plus 1 Hillbilly Horror Map Achievement to unlock the Grim Reaper",
             "rate": 1.1,
             "event": true,
             "tips": [
