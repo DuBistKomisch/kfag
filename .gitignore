@@ -14,3 +14,11 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+
+
+
+# Vim stuff
+.*.swp
+
+# Node stuff
+node_modules
