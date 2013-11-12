@@ -1,0 +1,4 @@
+RewriteEngine  on
+RewriteBase    /kf/
+RewriteRule    ^id/(.*)$  http://steamcommunity.com/id/$1 [P]
+RewriteRule    ^profiles/(.*)$  http://steamcommunity.com/profiles/$1 [P]

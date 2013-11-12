@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Killing Floor Achievement Guide</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/template.css" />
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/purl.js"></script>
+    <script src="js/insert.js"></script>
+  </head>
+  <body>
+    <section id="introduction">
+      <h1><a href="#introduction">Introduction</a></h1>
+      <p>
+        Welcome! This guide aims to document every achievement available in the game Killing Floor by Tripwire Interactive.
+      </p>
+      <p>
+        The guide includes details of each achievement as well as strategies to unlock them.
+      </p>
+      <p>
+        Map achievements are currently not included.
+      </p>
+      <section id="contact">
+        <h2><a href="#contact">Contact</a></h2>
+        <p>
+          This guide is a work in progress, so feel free to let me know any mistakes I've made.
+        </p>
+      </section>
+      <section id="symbols">
+        <h2><a href="#symbols">Symbols</a></h2>
+        <p>
+          <img src="images/perks/medic.png" />
+          <img src="images/perks/support.png" />
+          <img src="images/perks/sharpshooter.png" />
+          <img src="images/perks/commando.png" />
+          <img src="images/perks/berserker.png" />
+          <img src="images/perks/firebug.png" />
+          <img src="images/perks/demolition.png" />
+          <img src="images/perks/none.png" />
+          indicate that the achievement involves a weapon belonging to that perk.
+        </p>
+        <p>
+          <span class="tag easy">10.0</span><span class="tag medium">5.0</span><span class="tag hard">1.0</span>
+          indicate the percentage of players on Steam who have unlocked this achievement, with the colour giving an indication of how common it is at a glance.
+          Note that achievements introduced more recently tend to be skewed lower, since there has been less time to unlock them.
+        </p>
+        <p>
+          <span class="tag event">&nbsp;</span>
+          indicates that the achievement is only able to be unlocked during the corresponding event.
+          Note that despite being introduced with an event, some achievements can be unlocked at any time; for these, the symbol is not present.
+        </p>
+      </section>
+      <section>
+        <h2><a href="#options">Options</a></h2>
+        <p><label>Sort by <select id="sort" name="sort">
+          <option value="rate-desc" selected="selected">rate (descending)</option>
+          <option value="rate-asc">rate (ascending)</option>
+          <option value="name">name</option>
+        </select></label></p>
+        <p><label><input type="checkbox" id="events" name="events" /> Group by event</label></p>
+        <p><label><input type="checkbox" id="tips" name="tips" /> Show tips</label></p>
+        <p><label><input type="checkbox" id="old" name="old" /> Use old icons</label></p>
+        <p>
+          <label>Filter by Steam username or ID <input type="text" id="filter" name="filter"></input></label>
+          <button id="filterApply">Apply</button>
+          <button id="filterClear">Clear</button>
+        </p>
+      </section>
+    </section>
+    <div id="achievements">
+    </div>
+  </body>
+</html>
