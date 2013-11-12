@@ -19,6 +19,7 @@ $RECYCLE.BIN/
 
 # Vim stuff
 .*.swp
+*~
 
 # Node stuff
 node_modules

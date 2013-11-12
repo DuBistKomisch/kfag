@@ -9,7 +9,7 @@
         "icon": "83869d3f15ce7afe4ae829c1f1a96f61c8e17e1a",
         "name": "It's Not Easy Being Greasy",
         "description": "Cause a Specimen to Die by Luring them into Bloat Acid.",
-        "rate": 48.0
+        "rate": 48
       },
       {
         "id": "experimenticenticide",
@@ -46,7 +46,7 @@
         "icon": "5d3066e2f58125db0e26e100fc8afea2b9d8083c",
         "name": "Straight Rush",
         "description": "Kill the Patriarch Before he has a Chance to Heal.",
-        "rate": 27.0
+        "rate": 27
       },
       {
         "id": "philanthropist",
@@ -54,7 +54,7 @@
         "icon": "41354d3eddf6c5f9c2953a1a0b77f4e4ed7f8466",
         "name": "Philanthropist",
         "description": "Give 1,000 Pounds to Teammates who have 50% of Your Cash or Less.",
-        "rate": 25.0,
+        "rate": 25,
         "max": 1000,
         "count": "cashdonated"
       },
@@ -94,7 +94,7 @@
         "icon": "fe4fcda587ee1f18fe1b119843eb5eadd309872c",
         "name": "Homer's Heroes",
         "description": "Kill 100 Sirens.",
-        "rate": 16.0,
+        "rate": 16,
         "max": 100,
         "count": "sirenkills"
       },
@@ -113,7 +113,7 @@
         "icon": "783418c0018fb6d9e5670d4080de1f2a67752d66",
         "name": "Careful Spender",
         "description": "Kill 4 Specimens with a Single Shot from a Hunting Shotgun.",
-        "rate": 13.0,
+        "rate": 13,
         "perk": "support"
       },
       {
@@ -243,7 +243,7 @@
         "icon": "f40990e0d352bc19d2a4f26ee27ac2a501848893",
         "name": "Bitter Irony",
         "description": "Kill 2 Scrakes with a Chainsaw in a Single Wave.",
-        "rate": 5.0,
+        "rate": 5,
         "perk": "berserker"
       },
       {
@@ -664,7 +664,7 @@
             "icon": "4f4c0a376df41fe1b72dc00ad7dfd7b6fff637dc",
             "name": "Arcade Gamer",
             "description": "Complete the Pop the Clot, the Strong Man and the Grenade Toss games",
-            "rate": 2.0,
+            "rate": 2,
             "tips": [
               "These can be found within the central area of theme park in the Steamland map.",
               "It is easiest to complete this while the Ringmaster is waiting to be healed the first time in objective mode.",
@@ -715,7 +715,7 @@
             "icon": "a753c8a57a7db2a94a2299e78f86c894b2d6b225",
             "name": "Turbo Executioner",
             "description": "Kill 5 zeds in ZED time without reloading with Dr. T's LDS or Bullpup",
-            "rate": 1.0,
+            "rate": 1,
             "perk": "commando"
           },
           {
@@ -768,7 +768,7 @@
             "icon": "d39573bcc4b8fbaf2d0b1f7cd252b44b538b3626",
             "name": "Sparkling in the Twilight",
             "description": "Kill The Vampire Patriarch in Bedlam",
-            "rate": 3.0,
+            "rate": 3,
             "event": true
           },
           {
@@ -834,7 +834,7 @@
             "icon": "8bd48b7d4e85d07ae490eea16adc5415134b807d",
             "name": "Nail'd!",
             "description": "Kill 4 Stalkers in a game with the Vlad9000 Nailgun",
-            "rate": 6.0,
+            "rate": 6,
             "perk": "support"
           },
           {
@@ -883,7 +883,7 @@
             "icon": "63cf64cea635a4feda153869e190e34773e65992",
             "name": "Creepy Crawlies",
             "description": "Kill 15 Hillbilly Crawlers in 1 game with the Tommy Gun or MKb42",
-            "rate": 2.0,
+            "rate": 2,
             "perk": "commando",
             "event": true
           },
@@ -915,7 +915,7 @@
             "icon": "7615489f3109fccc634969417aab4af18b0fe1c0",
             "name": "Trench Warfare",
             "description": "Set a total of 200 Zeds on fire with the Trench Gun in Hillbilly Horror",
-            "rate": 1.0,
+            "rate": 1,
             "max": 200,
             "count": "zedsetfirewithtrenchonhillbilly",
             "perk": "firebug",
