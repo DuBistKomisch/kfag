@@ -26,6 +26,7 @@ http.get({host: 'steamcommunity.com', path: '/stats/KillingFloor/achievements/'}
         var name = achieve.childNodes[7].childNodes[1].childNodes[0].textContent.trim();
         var desc = achieve.childNodes[7].childNodes[3].childNodes[0].textContent.trim();
         var rate = achieve.childNodes[9].childNodes[0].textContent.trim();
+        var icon = main.childNodes[i - 2].childNodes[0].attributes[0].value;
 
         console.log();
         console.log('#' + (++count) + ': ' + name + ' (' + rate + ')');
@@ -51,6 +52,7 @@ http.get({host: 'steamcommunity.com', path: '/stats/KillingFloor/achievements/'}
           ++match;
           console.log('updating matching json node');
           node.rate = Number(rate.substring(0, rate.length - 1));
+          node.icon = icon.substring(icon.lastIndexOf('/') + 1, icon.length - 4);
         }
       }
     }
