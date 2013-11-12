@@ -49,7 +49,8 @@ http.get({host: 'steamcommunity.com', path: '/stats/KillingFloor/achievements/'}
         if (node != undefined)
         {
           ++match;
-          console.log('found matching json node');
+          console.log('updating matching json node');
+          node.rate = Number(rate.substring(0, rate.length - 1));
         }
       }
     }
