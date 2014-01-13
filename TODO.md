@@ -1,0 +1,5 @@
+- improve maps sorting
+  - add query parameter
+  - support reverse sorting
+  - add icon
+  - add some way to clear

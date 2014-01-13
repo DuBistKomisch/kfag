@@ -390,7 +390,7 @@
             "rate": 2,
             "event": true,
             "tips": [
-              "Unweld the door in the central room.",
+              "Unweld the door in the central room of <a href=\"#aperture\">Aperture</a>.",
               "Best with at least 2 players, with 1 distracting the final Zed of the wave."
             ]
           },
@@ -550,7 +550,7 @@
             "event": true,
             "tips": [
               "Requires at least 10 of <a href=\"#ringmaster\">Ringmaster</a>, <a href=\"#sparring-with-a-master\">Sparring with a Master</a>, <a href=\"#assistant-homicide\">Assistant Homicide</a>, <a href=\"#seeing-double\">Seeing Double</a>, <a href=\"#clearing-clown-alley\">Clearing Clown Alley</a>, <a href=\"#the-big-hunt\">The Big Hunt</a>, <a href=\"#lifting-a-dumbell\">Lifting a Dumbell</a>, <a href=\"#small-hands\">Small Hands</a>, <a href=\"#elephant-gun\">Elephant Gun</a>, <a href=\"#juggling-act\">Juggling Act</a>, <a href=\"#windjammer-enthusiast\">Windjammer Enthusiast</a>, <a href=\"#taking-down-the-big-top\">Taking Down the Big Top</a>, and <a href=\"#burning-up-the-midway\">Burning up the Midway</a>.",
-              "You also have to beat Abusement Park on at least normal difficulty."
+              "You also have to beat <a href=\"#abusement-park\">Abusement Park</a> on at least normal difficulty."
             ]
           },
           {
@@ -666,7 +666,7 @@
             "description": "Complete the Pop the Clot, the Strong Man and the Grenade Toss games",
             "rate": 1.8,
             "tips": [
-              "These can be found within the central area of theme park in the Steamland map.",
+              "These can be found within the central area of theme park in <a href=\"#steamland\">Steamland</a>.",
               "It is easiest to complete this while the Ringmaster is waiting to be healed the first time in objective mode.",
               "Pop the Clot: simply destroy all the clot heads.",
               "Strong Man: throw a regular grenade onto the plate on the ground.",
@@ -729,7 +729,7 @@
             "tips": [
               "Requires <a href=\"#punkd\">Punk'd</a>.",
               "Requires at least 4 of <a href=\"#hide-and-go-puke\">Hide and go Puke</a>, <a href=\"#arcade-gamer\">Arcade Gamer</a>, <a href=\"#full-charge\">Full Charge</a>, <a href=\"#guardian-assault-protector\">Guardian Assault Protector</a>, <a href=\"#extended-motion-protector\">Extended Motion Protector</a>, and <a href=\"#golden-3-crown-note\">Golden 3 Crown Note</a>.",
-              "You also have to beat Steamland in standard and objective mode on at least normal difficulty."
+              "You also have to beat Steamland in <a href=\"#steamland\">standard</a> and <a href=\"#kfo-steamland\">objective</a> mode on at least normal difficulty."
             ]
           }
         ]
@@ -906,7 +906,7 @@
             "event": true,
             "tips": [
               "Requires <a href=\"#meet-your-maker\">Meet Your Maker!</a>, <a href=\"#soul-collector\">Soul Collector</a>, <a href=\"#fiery-personality\">Fiery Personality</a>, <a href=\"#i-am-become-death\">I Am Become Death</a>, <a href=\"#creepy-crawlies\">Creepy Crawlies</a>, and <a href=\"#rippin-it-up\">Rippin' It Up</a>.",
-              "You also have to beat Hillbilly Horror on at least normal difficulty."
+              "You also have to beat <a href=\"#hillbilly-horror\">Hillbilly Horror</a> on at least normal difficulty."
             ]
           },
           {
@@ -947,7 +947,7 @@
             "rate": 0.4,
             "tips": [
               "Basically down to luck.",
-              "To optimise your chances, play with 6 players on beginner and restart after every player tries."
+              "To optimise your chances, play with 6 players on beginner and restart after trying both machines."
             ]
           },
           {
@@ -1132,7 +1132,7 @@
             "event": true,
             "tips": [
               "Requires at least 10 of <a href=\"#merry-friggin-christmas\">Merry Friggin Christmas</a>, <a href=\"#tis-better-to-give-than-to-receive\">Tis Better to Give than to Receive</a>, <a href=\"#deck-the-halls-with-buckets-o-blood\">Deck the Halls with Buckets o' Blood</a>, <a href=\"#who-brings-a-gun-to-a-snow-ball-fight\">Who Brings a Gun to a Snow Ball Fight?</a>, <a href=\"#eggnog-anyone\">Eggnog Anyone?</a>, <a href=\"#back-to-work\">Back to Work</a>, <a href=\"#fending-off-mrs-claws\">Fending off Mrs. Claws</a>, <a href=\"#not-so-silent-night\">Not So Silent Night</a>, <a href=\"#cracked-the-nutcracker\">Cracked the Nutcracker!</a>, <a href=\"#cant-catch-me\">Can't Catch Me</a>, <a href=\"#toasted-jack-frost\">Toasted Jack Frost</a>, <a href=\"#rudolph-the-bloody-nosed-reindeer\">Rudolph, the Bloody Nosed Reindeer</a>, and <a href=\"#thats-not-santa\">That's not Santa!</a>.",
-              "You also have to beat at least 1 of Santa's Evil Lair, Ice Cave and Moon Base on at least normal difficulty."
+              "You also have to beat at least 1 of <a href=\"#santas-evil-lair\">Santa's Evil Lair</a>, <a href=\"#ice-cave\">Ice Cave</a> and <a href=\"#moonbase\">Moonbase</a> on at least normal difficulty."
             ]
           },
           {
@@ -1340,7 +1340,7 @@
             "perk": "medic",
             "tips": [
               "Basically just jump and shoot while you come back down.",
-              "Easiest on Moon Base."
+              "Easiest on <a href=\"moonbase\">Moonbase</a>."
             ]
           }
         ]

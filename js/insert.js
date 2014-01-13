@@ -1,9 +1,16 @@
+window.mapSortMode = null;
+
 $(document).ready(function ()
 {
   $.getJSON('data.json', function (data)
   {
     window.data = data;
-    filter();
+    
+    $.getJSON('maps.json', function (data)
+    {
+      window.maps = data;
+      filter();
+    });
   });
   
   $('#sort').change(update);
@@ -81,6 +88,8 @@ function update()
   }
   
   tips();
+  
+  update_maps();
 }
 
 function tips()
@@ -216,4 +225,89 @@ function processAchievements(list, base)
       continue;
     base.append($achievement);
   }
+}
+
+function update_maps()
+{
+  var $base = $("#maps tbody");
+  $base.empty();
+  
+  if ($('#events').prop('checked'))
+  {
+    for (var i = 0; i < window.maps.length; i++)
+    {
+      $base.append($('<tr id="' + window.maps[i].id + '"><th class="division"><a href="#' + window.maps[i].id + '">' + window.maps[i].name + '</a></th></tr>'));
+      processMaps(window.maps[i].data, $base);
+    }
+  }
+  else
+  {
+    var maps = [];
+    for (var i = 0; i < window.maps.length; i++)
+      maps = maps.concat(window.maps[i].data);
+    processMaps(maps, $base);
+  }
+}
+
+function sortMapName(a, b)
+{
+  if (a.name < b.name)
+    return -1;
+  else if (a.name > b.name)
+    return 1;
+  return 0;
+}
+
+function sortMapRate(a, b, i)
+{
+  if (a.rate[i] < b.rate[i])
+    return 1;
+  else if (a.rate[i] > b.rate[i])
+    return -1;
+  return 0;
+}
+
+function sortMapNormal(a, b) { return sortMapRate(a, b, 0); }
+function sortMapHard(a, b) { return sortMapRate(a, b, 1); }
+function sortMapSuicidal(a, b) { return sortMapRate(a, b, 2); }
+function sortMapHell(a, b) { return sortMapRate(a, b, 3); }
+
+function processMaps(list, base)
+{
+  switch (window.mapSortMode)
+  {
+    case 'name':
+      list.sort(sortMapName);
+      break;
+    case 'normal':
+      list.sort(sortMapNormal);
+      break;
+    case 'hard':
+      list.sort(sortMapHard);
+      break;
+    case 'suicidal':
+      list.sort(sortMapSuicidal);
+      break;
+    case 'hell':
+      list.sort(sortMapHell);
+      break;
+  }
+  
+  for (var i = 0; i < list.length; i++)
+  {
+    var $map = $('<tr id="' + list[i].id + '"><td class="map"><a href="#' + list[i].id + '">' + list[i].name + '</a>' + (list[i].kfo != undefined ? '<span class="kfo">KFO</span>' : '') + '</td></tr>');
+    for (var j = 0; j < (list[i].nohoe != undefined ? 3 : 4); j++)
+      if (window.user != null && list[i].api != undefined
+      && $(window.user).find('APIName:contains(' + ($.isArray(list[i].api) ? list[i].api[j] : 'win' + list[i].api + ['normal', 'hard', 'suicidal', 'hell'][j]) + ')').next('value').text() != '0')
+        $map.append($('<td>&#x2714;</td>'));
+      else
+        $map.append($('<td><span class="tag ' + (list[i].rate[j] >= 4 ? 'easy' : (list[i].rate[j] >= 2 ? 'medium' : 'hard')) + '">' + list[i].rate[j] + '</span></td>'));
+    base.append($map);
+  }
+}
+
+function sort_maps(by)
+{
+  window.mapSortMode = by;
+  update_maps();
 }

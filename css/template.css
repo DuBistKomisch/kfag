@@ -258,3 +258,52 @@ article div:nth-of-type(1) p:nth-of-type(4) span:nth-of-type(3)
 .firebug { background-image: url(../images/perks/firebug.png); }
 .demolition { background-image: url(../images/perks/demolition.png); }
 .none { background-image: url(../images/perks/none.png); }
+
+/**
+ * maps area
+ */
+
+#maps table
+{
+  margin: 10px 0px;
+  border-collapse: separate;
+  border-spacing: 5px;
+  
+  background-color: #888;
+  border: #bbb 1px solid;
+  border-radius: 5px;
+}
+
+#maps th
+{
+  width: 20%;
+  
+  font-weight: bold;
+}
+
+#maps td
+{
+  width: 20%;
+  padding: 5px;
+  
+  text-align: center;
+}
+
+#maps th.division
+{
+  text-indent: 10px;
+  text-align: left;
+  
+  font-style: italic;
+}
+
+#maps td.map
+{
+  text-align: left;
+}
+
+#maps .kfo
+{
+  vertical-align: super;
+  font-size: 50%;
+}
