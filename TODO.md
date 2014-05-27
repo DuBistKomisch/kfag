@@ -3,3 +3,7 @@
   - support reverse sorting
   - add icon
   - add some way to clear
+- maps update
+  - rename name to map
+  - add name array
+  - match up names in findAchievement
