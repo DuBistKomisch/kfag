@@ -7,31 +7,56 @@
         "id": "west-london",
         "api": "westlondon",
         "name": "West London",
-        "rate": [15.7, 5.5, 1.6, 1.1]
+        "rate": [
+          15.88,
+          5.64,
+          1.7,
+          1.15
+        ]
       },
       {
         "id": "manor",
         "api": "manor",
         "name": "Manor",
-        "rate": [10, 3.9, 1.4, 0.9]
+        "rate": [
+          10.1,
+          3.95,
+          1.48,
+          0.99
+        ]
       },
       {
         "id": "farm",
         "api": "farm",
         "name": "Farm",
-        "rate": [8.9, 2.9, 1.3, 0.9]
+        "rate": [
+          8.98,
+          3.01,
+          1.36,
+          0.96
+        ]
       },
       {
         "id": "offices",
         "api": "offices",
         "name": "Offices",
-        "rate": [8.3, 3.1, 1.3, 0.9]
+        "rate": [
+          8.44,
+          3.16,
+          1.35,
+          0.98
+        ]
       },
       {
         "id": "biotics-lab",
         "api": "bioticslab",
         "name": "Biotics Lab",
-        "rate": [12, 4.8, 1.6, 1.1]
+        "rate": [
+          12.12,
+          4.94,
+          1.67,
+          1.13
+        ]
       }
     ]
   },
@@ -43,19 +68,34 @@
         "id": "foundry",
         "api": "foundry",
         "name": "Foundry",
-        "rate": [5.4, 2.6, 1.2, 0.9]
+        "rate": [
+          5.43,
+          2.63,
+          1.26,
+          0.94
+        ]
       },
       {
         "id": "bedlam",
         "api": "asylum",
         "name": "Bedlam",
-        "rate": [4.5, 2.5, 1.2, 1.1]
+        "rate": [
+          4.6,
+          2.57,
+          1.22,
+          0.92
+        ]
       },
       {
         "id": "wyre",
         "api": "wyre",
         "name": "Wyre",
-        "rate": [4.8, 2.1, 1.1, 0.9]
+        "rate": [
+          4.86,
+          2.16,
+          1.17,
+          0.9
+        ]
       }
     ]
   },
@@ -67,55 +107,100 @@
         "id": "biohazard",
         "api": "biohazard",
         "name": "Biohazard",
-        "rate": [3.8, 2, 1.1, 1]
+        "rate": [
+          3.96,
+          2.11,
+          1.17,
+          1.01
+        ]
       },
       {
         "id": "crash",
         "api": "crash",
         "name": "Crash",
-        "rate": [5.1, 2.2, 1.1, 0.9]
+        "rate": [
+          5.18,
+          2.32,
+          1.15,
+          0.95
+        ]
       },
       {
         "id": "departed",
         "api": "departed",
         "name": "Departed",
-        "rate": [4.7, 2.3, 1.2, 1]
+        "rate": [
+          4.78,
+          2.34,
+          1.24,
+          1.02
+        ]
       },
       {
         "id": "filths-cross",
         "api": "filthscross",
         "name": "Filth's Cross",
-        "rate": [3.5, 1.7, 1, 0.9]
+        "rate": [
+          3.63,
+          1.78,
+          1.05,
+          0.91
+        ]
       },
       {
         "id": "hospital-horrors",
         "api": "hospitalhorrors",
         "name": "Hospital Horrors",
-        "rate": [3.3, 1.6 , 1, 0.9]
+        "rate": [
+          3.4,
+          1.69,
+          1.05,
+          0.94
+        ]
       },
       {
         "id": "icebreaker",
         "api": "icebreaker",
         "name": "Icebreaker",
-        "rate": [3.6, 1.7, 1, 0.9]
+        "rate": [
+          3.73,
+          1.73,
+          1.02,
+          0.92
+        ]
       },
       {
         "id": "mountain-pass",
         "api": "mountainpass",
         "name": "Mountain Pass",
-        "rate": [8.8, 3.2, 1.3, 1]
+        "rate": [
+          8.98,
+          3.3,
+          1.33,
+          1.05
+        ]
       },
       {
         "id": "suburbia",
         "api": "suburbia",
         "name": "Suburbia",
-        "rate": [3.5, 1.6, 1, 0.9]
+        "rate": [
+          3.58,
+          1.66,
+          1.02,
+          0.9
+        ]
       },
       {
         "id": "waterworks",
         "api": "waterworks",
         "name": "Waterworks",
-        "rate": [4.2, 1.8, 1, 0.9]
+        "rate": [
+          4.26,
+          1.83,
+          1.05,
+          0.93
+        ]
       }
     ]
   },
@@ -127,67 +212,132 @@
         "id": "santas-evil-lair",
         "api": "santasevillair",
         "name": "Santa's Evil Lair",
-        "rate": [4.3, 1.6, 1, 0.9]
+        "rate": [
+          4.35,
+          1.69,
+          1,
+          0.91
+        ]
       },
       {
         "id": "aperture",
-        "api": ["achievement133", "achievement134", "achievement135", "achievement136"],
+        "api": [
+          "achievement133",
+          "achievement134",
+          "achievement135",
+          "achievement136"
+        ],
         "name": "Aperture",
-        "rate": [5.2, 2.1, 1.1, 0.9]
+        "rate": [
+          5.32,
+          2.22,
+          1.14,
+          0.95
+        ]
       },
       {
         "id": "abusement-park",
         "api": "sideshow",
         "name": "Abusement Park",
-        "rate": [4.5, 1.9, 1.1, 0.9]
+        "rate": [
+          4.55,
+          1.99,
+          1.13,
+          0.98
+        ]
       },
       {
         "id": "ice-cave",
         "api": "icecave",
         "name": "Ice Cave",
-        "rate": [4.1, 1.7, 1, 0.9]
+        "rate": [
+          4.22,
+          1.78,
+          1,
+          0.92
+        ]
       },
       {
         "id": "hellride",
         "api": "hellride",
         "name": "Hellride",
-        "rate": [2.8, 1.4, 0.8, 0.7]
+        "rate": [
+          2.94,
+          1.47,
+          0.88,
+          0.77
+        ]
       },
       {
         "id": "hillbilly-horror",
         "api": "hillbilly",
         "name": "Hillbilly Horror",
-        "rate": [2.8, 1.2, 0.7, 0.7]
+        "rate": [
+          2.9,
+          1.24,
+          0.78,
+          0.71
+        ]
       },
       {
         "id": "moonbase",
-        "api": ["hereistous", "attemptingreentry", "amusingdeath", "agiantstepbackforhumanity"],
+        "api": [
+          "hereistous",
+          "attemptingreentry",
+          "amusingdeath",
+          "agiantstepbackforhumanity"
+        ],
         "name": "Moonbase",
-        "rate": [4.2, 1.5, 0.7, 0.6]
+        "rate": [
+          4.47,
+          1.58,
+          0.77,
+          0.68
+        ]
       },
       {
         "id": "steamland",
         "api": "steamland",
         "name": "Steamland",
-        "rate": [2.1, 0.9, 0.5, 0.5]
+        "rate": [
+          2.22,
+          0.99,
+          0.61,
+          0.57
+        ]
       },
       {
         "id": "fright-yard",
         "api": "frightyard",
         "name": "Fright Yard",
-        "rate": [1.1, 0.6, 0.3, 0.3]
+        "rate": [
+          1.4,
+          0.8,
+          0.43,
+          0.39
+        ]
       },
       {
         "id": "hell",
         "api": "hell",
         "name": "Hell",
-        "rate": [0.7, 0.4, 0.2, 0.2]
+        "rate": [
+          1.05,
+          0.54,
+          0.32,
+          0.28
+        ]
       },
       {
         "id": "forgotten",
         "api": "forgotten",
         "name": "Forgotten",
-        "rate": [0.7, 0.4, 0.2, 0.2]
+        "rate": [
+          1.01,
+          0.56,
+          0.32,
+          0.28
+        ]
       }
     ]
   },
@@ -200,14 +350,24 @@
         "api": "steamlandobj",
         "name": "Steamland",
         "kfo": true,
-        "rate": [2.1, 0.7, 0.5, 0.4]
+        "rate": [
+          2.28,
+          0.75,
+          0.53,
+          0.48
+        ]
       },
       {
         "id": "kfo-fright-yard",
         "api": "frightyardobj",
         "name": "Fright Yard",
         "kfo": true,
-        "rate": [1, 0.4, 0.3, 0.2]
+        "rate": [
+          1.14,
+          0.49,
+          0.33,
+          0.31
+        ]
       }
     ]
   },
@@ -220,20 +380,40 @@
         "api": "allmaps",
         "name": "Core",
         "nohoe": true,
-        "rate": [4.9, 1.9, 1.1, -1]
+        "rate": [
+          4.95,
+          2.01,
+          1.1,
+          -1
+        ]
       },
       {
         "id": "comp-summer-2009",
         "api": "all3summermaps",
         "name": "Summer 2009",
         "nohoe": true,
-        "rate": [2.5, 1.5, 1, -1]
+        "rate": [
+          2.59,
+          1.59,
+          1.05,
+          -1
+        ]
       },
       {
         "id": "comp-cake",
-        "api": ["completenewachievementsnormal", "completenewachievementshard", "completenewachievementssuicidal", "completenewachievementshell"],
+        "api": [
+          "completenewachievementsnormal",
+          "completenewachievementshard",
+          "completenewachievementssuicidal",
+          "completenewachievementshell"
+        ],
         "name": "Grindhouse",
-        "rate": [1.5, 1.1, 0.8, 0.8]
+        "rate": [
+          1.6,
+          1.14,
+          0.88,
+          0.82
+        ]
       }
     ]
   }

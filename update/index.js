@@ -1,12 +1,11 @@
 var fs = require('fs');
-var gumbo = require('gumbo-parser');
 var http = require('http');
 var util = require('util');
 
 var DATA_FILE = '../data.json';
-var MAPS_FILE = 'maps.json';
+var MAPS_FILE = '../maps.json';
 
-http.get({host: 'steamcommunity.com', path: '/stats/KillingFloor/achievements/'}, function (res) {
+http.get({host: 'api.steampowered.com', path: '/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid=1250&format=json'}, function (res) {
   var response = '';
   res.on('data', function (chunk) {
     response += chunk;
@@ -22,8 +21,9 @@ http.get({host: 'steamcommunity.com', path: '/stats/KillingFloor/achievements/'}
 function process(response)
 {
   // get steam data
-  var tree = gumbo(response);
-  var main = tree.root.childNodes[2].childNodes[1].childNodes[18].childNodes[1];
+  var tree = JSON.parse(response);
+  var main = tree.achievementpercentages.achievements;
+  console.log('found ' + main.length);
 
   // get existing json
   var data = JSON.parse(fs.readFileSync(DATA_FILE, {encoding: 'utf8'}));
@@ -33,61 +33,42 @@ function process(response)
   console.log('-- working on ' + DATA_FILE);
 
   // init counters
-  var count = 0;
   var matched = 0;
   var updated = 0;
 
-  for (var i = 0; i < main.childNodes.length; ++i)
+  for (var i = 0; i < main.length; ++i)
   {
-    var achieve = main.childNodes[i];
-    if (achieve.nodeType == 1
-        && achieve.attributes[0] != undefined
-        && achieve.attributes[0].value == 'achieveTxtHolder')
+    // match to existing json node
+    var node = undefined;
+    for (var j = 0; j < data.length; ++j)
     {
-      util.print('processing #' + (++count) + "\r");
-
-      // scrape data
-      var name = achieve.childNodes[7].childNodes[1].childNodes[0].textContent.trim();
-      //var desc = achieve.childNodes[7].childNodes[3].childNodes[0].textContent.trim();
-      var rate = achieve.childNodes[9].childNodes[0].textContent.trim();
-      var icon = main.childNodes[i - 2].childNodes[0].attributes[0].value;
-
-      // match to existing json node
-      var node = undefined;
-      for (var j = 0; j < data.length; ++j)
+      if (data[j].children == undefined)
+        node = findAchievement(data[j].data, main[i].name);
+      else for (var k = 0; k < data[j].children.length; ++k)
       {
-        if (data[j].children == undefined)
-          node = findAchievement(data[j].data, name);
-        else for (var k = 0; k < data[j].children.length; ++k)
-        {
-          node = findAchievement(data[j].children[k].data, name);
-          if (node != undefined)
-            break;
-        }
+        node = findAchievement(data[j].children[k].data, main[i].name);
         if (node != undefined)
           break;
       }
-
-      // update
       if (node != undefined)
+        break;
+    }
+
+    // update
+    if (node != undefined)
+    {
+      ++matched;
+      rate = String(main[i].percent);
+      rate = Number(rate.substring(0, rate.indexOf('.') + 3));
+      if (node.rate != rate)
       {
-        console.log(name);
-        ++matched;
-        rate = Number(rate.substring(0, rate.length - 1));
-        icon = icon.substring(icon.lastIndexOf('/') + 1, icon.length - 4);
-        if (node.rate != rate || node.icon != icon)
-        {
-          ++updated;
-          node.rate = rate;
-          node.icon = icon;
-        }
+        ++updated;
+        node.rate = rate;
       }
     }
   }
-  
+
   // done DATA
-  console.log();
-  console.log('found ' + count);
   console.log('matched ' + matched);
   console.log('updated ' + updated);
 
@@ -95,52 +76,38 @@ function process(response)
   console.log('-- working on ' + MAPS_FILE);
 
   // init counters
-  var count = 0;
   var matched = 0;
   var updated = 0;
 
-  for (var i = 0; i < main.childNodes.length; ++i)
+  for (var i = 0; i < main.length; ++i)
   {
-    var achieve = main.childNodes[i];
-    if (achieve.nodeType == 1
-        && achieve.attributes[0] != undefined
-        && achieve.attributes[0].value == 'achieveTxtHolder')
+    // match to existing json node
+    for (var j = 0; j < maps.length; ++j)
     {
-      util.print('processing #' + (++count) + "\r");
-
-      // scrape data
-      var name = achieve.childNodes[7].childNodes[1].childNodes[0].textContent.trim();
-      var rate = achieve.childNodes[9].childNodes[0].textContent.trim();
-
-      // match to existing json node
-      var node = undefined;
-      for (var j = 0; j < maps.length; ++j)
+      for (var k = 0; k < maps[j].data.length; ++k)
       {
-        node = findAchievement(maps[j].data, name);
-        if (node != undefined)
-          break;
-      }
-
-      // update
-      if (node != undefined)
-      {
-        console.log('name -> ' + node);
-        /*++matched;
-        rate = Number(rate.substring(0, rate.length - 1));
-        icon = icon.substring(icon.lastIndexOf('/') + 1, icon.length - 4);
-        if (node.rate != rate || node.icon != icon)
+        var map = maps[j].data[k];
+        for (var l = 0; l < 4; ++l)
         {
-          ++updated;
-          node.rate = rate;
-          node.icon = icon;
-        }*/
+          var name = Array.isArray(map.api) ? map.api[l] : 'win' + map.api + ['normal', 'hard', 'suicidal', 'hell'][l];
+          if (main[i].name.toLowerCase() == name)
+          {
+            // update
+            ++matched;
+            rate = String(main[i].percent);
+            rate = Number(rate.substring(0, rate.indexOf('.') + 3));
+            if (map.rate[l] != rate)
+            {
+              ++updated;
+              map.rate[l] = rate;
+            }
+          }
+        }
       }
     }
   }
 
   // done MAPS
-  console.log();
-  console.log('found ' + count);
   console.log('matched ' + matched);
   console.log('updated ' + updated);
 
@@ -151,8 +118,9 @@ function process(response)
 
 function findAchievement(list, name)
 {
+  name = name.toLowerCase();
   for (var i = 0; i < list.length; ++i)
-    if (list[i].name == name)
+    if (list[i].api == name)
       return list[i];
   return undefined;
 }
