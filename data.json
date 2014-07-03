@@ -750,7 +750,7 @@
             "id": "rich-evil-uncle",
             "api": "destroygoldbags",
             "icon": "665e640f9b774b3cbf86ed05762ea8905d848489",
-            "name": "Rich-Evil-Uncle",
+            "name": "Rich Evil Uncle",
             "description": "Collect all the Treasure Bags",
             "rate": 0.01
           },
@@ -792,7 +792,11 @@
             "icon": "851ce452dddb84c5bbf1c94cb461e4090e2827ba",
             "name": "Doctor WHO??",
             "description": "",
-            "rate": 0.02
+            "rate": 0.02,
+            "tips": [
+              "Requires all 4 of <a href=\"#nitro-boost\">Nitro Boost!</a>, <a href=\"#totally-metal\">Totally Metal</a>, <a href=\"#multi-pass\">Multi-pass</a>, and <a href=\"#science-hater\">Science Hater</a>.",
+              "You also have to beat Transit in <a href=\"#kfo-transit\">objective</a> mode on at least hard difficulty."
+            ]
           }
         ]
       }
