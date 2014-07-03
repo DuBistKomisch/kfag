@@ -733,6 +733,68 @@
             ]
           }
         ]
+      },
+      {
+        "id": "summer-2014",
+        "name": "2014 – End Of The Line",
+        "data": [
+          {
+            "id": "oktoberfest-master",
+            "api": "destroybeersteins",
+            "icon": "56c45bb4c9da52c30cc3963c6d2feea065cce0f6",
+            "name": "Oktoberfest Master",
+            "description": "Collect all the Beer Steins",
+            "rate": 0.03
+          },
+          {
+            "id": "rich-evil-uncle",
+            "api": "destroygoldbags",
+            "icon": "665e640f9b774b3cbf86ed05762ea8905d848489",
+            "name": "Rich-Evil-Uncle",
+            "description": "Collect all the Treasure Bags",
+            "rate": 0.01
+          },
+          {
+            "id": "nitro-boost",
+            "api": "nitroinxseconds",
+            "icon": "7b4adee17cff70733a1b91d22d68983b3ab97ee2",
+            "name": "Nitro Boost!",
+            "description": "Get the Nitro to the Objective in 135 seconds or less",
+            "rate": 0.02
+          },
+          {
+            "id": "totally-metal",
+            "api": "killxzedsduringweld",
+            "icon": "938bfefec4cf3acf86b5c481f04c8bd28b96ca00",
+            "name": "Totally Metal",
+            "description": "Kill 250 Zeds before completing the welding objective",
+            "rate": 0.07
+          },
+          {
+            "id": "multi-pass",
+            "api": "pickupdoorkey",
+            "icon": "4361f09d30dc059ec7522b87c33f5feb2624bb72",
+            "name": "Multi-pass",
+            "description": "Pick up the door key",
+            "rate": 0.16
+          },
+          {
+            "id": "science-hater",
+            "api": "destroydnavials",
+            "icon": "90a115c82fb10954fd4d3068848a48c8bf1645b6",
+            "name": "Science Hater",
+            "description": "Destroy all the DNA vials",
+            "rate": 0.06
+          },
+          {
+            "id": "doctor-who",
+            "api": "completemsclamleyachievements",
+            "icon": "851ce452dddb84c5bbf1c94cb461e4090e2827ba",
+            "name": "Doctor WHO??",
+            "description": "",
+            "rate": 0.02
+          }
+        ]
       }
     ]
   },

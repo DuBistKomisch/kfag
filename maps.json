@@ -338,6 +338,39 @@
           0.36,
           0.31
         ]
+      },
+      {
+        "id": "sirens-belch",
+        "api": "sirensbelch",
+        "name": "Siren's Belch",
+        "rate": [
+          0.05,
+          0.02,
+          0.01,
+          0.01
+        ]
+      },
+      {
+        "id": "stronghold",
+        "api": "stronghold",
+        "name": "Stronghold",
+        "rate": [
+          0.03,
+          0.02,
+          0.01,
+          0.01
+        ]
+      },
+      {
+        "id": "transit",
+        "api": "transit",
+        "name": "Transit",
+        "rate": [
+          0.04,
+          0.02,
+          0.01,
+          0.01
+        ]
       }
     ]
   },
@@ -367,6 +400,18 @@
           0.53,
           0.36,
           0.34
+        ]
+      },
+      {
+        "id": "kfo-transit",
+        "api": "transitobj",
+        "name": "Transit",
+        "kfo": true,
+        "rate": [
+          0.04,
+          0.02,
+          0.01,
+          0.01
         ]
       }
     ]
