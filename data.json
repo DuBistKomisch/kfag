@@ -791,7 +791,7 @@
             "api": "completemsclamleyachievements",
             "icon": "851ce452dddb84c5bbf1c94cb461e4090e2827ba",
             "name": "Doctor WHO??",
-            "description": "",
+            "description": "Get all Objective achievements and beat KFO Transit on Hard or above to unlock Dr Rachel Clamely",
             "rate": 0.02,
             "tips": [
               "Requires all 4 of <a href=\"#nitro-boost\">Nitro Boost!</a>, <a href=\"#totally-metal\">Totally Metal</a>, <a href=\"#multi-pass\">Multi-pass</a>, and <a href=\"#science-hater\">Science Hater</a>.",
