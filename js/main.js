@@ -33,43 +33,53 @@ $(document).ready(function ()
 
 function filter()
 {
-  if ($('#filter').val() != '')
-  {
-    // try username
-    $.get('http://jakebarnes.com.au/kf/id/' + $('#filter').val() + '/statsfeed/1250?xml=1', function (data)
-    {
-      if ($(data).find('error').length > 0)
-      {
-        // try steamid64
-        $.get('http://jakebarnes.com.au/kf/profiles/' + $('#filter').val() + '/statsfeed/1250?xml=1', function (data)
-        {
-          if ($(data).find('error').length > 0)
-          {
-            // failure
-            window.user = null;
-            alert('Not a valid Steam username or ID.');
-          }
-          else
-          {
-            // success
-            window.user = data;
-            update();
-          }
-        }, 'xml');
-      }
-      else
-      {
-        // success
-        window.user = data;
-        update();
-      }
-    }, 'xml');
-  }
-  else
+  if ($('#filter').val() == '')
   {
     window.user = null;
     update();
+    return;
   }
+
+  // try username
+  $('#filterStatus').removeClass().addClass('working').text('Trying as username...');
+  $.get('http://jakebarnes.com.au/id/' + $('#filter').val() + '/statsfeed/1250?xml=1')
+  .done(function (data, statusText, jqXHR)
+  {
+    if ($(data).find('error').length > 0)
+    {
+      $('#filterStatus').removeClass().addClass('working').text('Trying as SteamID64...');
+      $.get('http://jakebarnes.com.au/profiles/' + $('#filter').val() + '/statsfeed/1250?xml=1')
+      .done(function (data, statusText, jqXHR)
+      {
+        if ($(data).find('error').length > 0)
+        {
+          $('#filterStatus').removeClass().addClass('error').text('Not a valid username or SteamID64.');
+          window.user = null;
+          update();
+        }
+        else
+        {
+          $('#filterStatus').removeClass().addClass('success').text('Done.');
+          window.user = data;
+          update();
+        }
+      })
+      .fail(function (jqXHR, statusText, error)
+      {
+        $('#filterStatus').removeClass().addClass('error').text('Steam is busy! Try again soon. [' + jqXHR.status + ': ' + error + ']');
+      });
+    }
+    else
+    {
+      $('#filterStatus').removeClass().addClass('success').text('Done.');
+      window.user = data;
+      update();
+    }
+  })
+  .fail(function (jqXHR, statusText, error)
+  {
+    $('#filterStatus').removeClass().addClass('error').text('Steam is busy! Try again soon. [' + jqXHR.status + ': ' + error + ']');
+  });
 }
 
 function update()

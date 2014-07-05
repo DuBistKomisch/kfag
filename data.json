@@ -9,7 +9,7 @@
         "icon": "83869d3f15ce7afe4ae829c1f1a96f61c8e17e1a",
         "name": "It's Not Easy Being Greasy",
         "description": "Cause a Specimen to Die by Luring them into Bloat Acid.",
-        "rate": 48.93
+        "rate": 48.94
       },
       {
         "id": "experimenticenticide",
@@ -17,7 +17,7 @@
         "icon": "7595469134375f7694cc2d29c95058eabb3e42d2",
         "name": "Experimenticenticide",
         "description": "Kill 100 Specimens.",
-        "rate": 47.89,
+        "rate": 47.9,
         "max": 100,
         "count": "kills"
       },
@@ -27,7 +27,7 @@
         "icon": "600d69cd647857320befc6b5f35fa61467563f34",
         "name": "Social Outburst",
         "description": "Kill 8 Specimens with One Grenade.",
-        "rate": 36.5,
+        "rate": 36.51,
         "perk": "demolition"
       },
       {
@@ -46,7 +46,7 @@
         "icon": "5d3066e2f58125db0e26e100fc8afea2b9d8083c",
         "name": "Straight Rush",
         "description": "Kill the Patriarch Before he has a Chance to Heal.",
-        "rate": 28.66
+        "rate": 28.67
       },
       {
         "id": "philanthropist",
@@ -104,7 +104,7 @@
         "icon": "e2eb0364ae4ff41954ecc542605cbc8de222b586",
         "name": "Too Close For Comfort",
         "description": "Finish off a Fleshpound using a Melee Attack.",
-        "rate": 16.27,
+        "rate": 16.26,
         "perk": "berserker"
       },
       {
@@ -122,7 +122,7 @@
         "icon": "25ba09203237cd47b92233374d7bd5c7eccbcbab",
         "name": "Quarter Pounder With Ease",
         "description": "Turn 5 Fleshpounds into Giblets.",
-        "rate": 13.14,
+        "rate": 13.13,
         "max": 5,
         "count": "gibbedfleshpounds",
         "perk": "demolition"
@@ -133,7 +133,7 @@
         "icon": "8398bea0b74eb748a996177ac0b6306df5f40134",
         "name": "Getting Chunky",
         "description": "Obliterate 10 Zeds at once with the Pipe Bomb.",
-        "rate": 12.85,
+        "rate": 12.84,
         "perk": "demolition"
       },
       {
@@ -142,7 +142,7 @@
         "icon": "ffd6dae0c00e35e453c9655b7aba2b73083b75da",
         "name": "Fascist Dietitian",
         "description": "Kill 200 Bloats.",
-        "rate": 12.82,
+        "rate": 12.81,
         "max": 200,
         "count": "bloatkills"
       },
@@ -183,7 +183,7 @@
         "icon": "ad2be44ea13470264e1a7038a8839304ea4addd2",
         "name": "Flaming Hell, That was Close",
         "description": "As Firebug, kill the Husk with the Flamethrower before he hurts anyone.",
-        "rate": 11.37,
+        "rate": 11.36,
         "perk": "firebug"
       },
       {
@@ -203,7 +203,7 @@
         "icon": "312934b98ddaa4b5a841369fdb6aca046e927a05",
         "name": "Experimentilottacide",
         "description": "Kill 10,000 Specimens.",
-        "rate": 10.68,
+        "rate": 10.67,
         "max": 10000,
         "count": "kills"
       },
@@ -213,7 +213,7 @@
         "icon": "d1df5ec9cfaf0f851dd0783126a7fe6af114753b",
         "name": "Thin-Ice Pirouette",
         "description": "Complete 10 Waves when the Rest of your Team has Died.",
-        "rate": 7.05,
+        "rate": 7.04,
         "max": 10,
         "count": "solesurvivorwaves"
       },
@@ -223,7 +223,7 @@
         "icon": "cdd3ccb8acf79c79beb5ee79f039c1cabe20bb5b",
         "name": "Master Surgeon",
         "description": "As a Medic, Kill 8 Specimens using a Knife in a Single Wave.",
-        "rate": 6.52,
+        "rate": 6.51,
         "perk": "medic"
       },
       {
@@ -243,7 +243,7 @@
         "icon": "f40990e0d352bc19d2a4f26ee27ac2a501848893",
         "name": "Bitter Irony",
         "description": "Kill 2 Scrakes with a Chainsaw in a Single Wave.",
-        "rate": 5.06,
+        "rate": 5.05,
         "perk": "berserker"
       },
       {
@@ -252,7 +252,7 @@
         "icon": "223e39afb698e436a76d945f81bf583940ded108",
         "name": "Healing Touch",
         "description": "Heal 200 teammates with the MP7's medication dart.",
-        "rate": 4.74,
+        "rate": 4.73,
         "max": 200,
         "count": "teammateshealedwithmp7",
         "perk": "medic"
@@ -400,7 +400,7 @@
             "icon": "366d6ee5bd659841507fc9fd5de687ef1eeb92a5",
             "name": "Uber Tuber",
             "description": "Expensive but delicious! Brought to you by Dr. Dougley and Lord Ned.",
-            "rate": 1.19,
+            "rate": 1.2,
             "event": true,
             "tips": [
               "Buy the Potato weapon which costs £70,000.",
@@ -426,7 +426,7 @@
             "icon": "100321aa0c3c48f153dd75a0a9a18252f2701c93",
             "name": "Ringmaster",
             "description": "Kill the \"Ring Leader\" (Circus Patriarch)",
-            "rate": 15.71,
+            "rate": 15.77,
             "event": true
           },
           {
@@ -435,7 +435,7 @@
             "icon": "b9c697a092c9a9882499f007b24b9397a915bd0e",
             "name": "Clearing Clown Alley",
             "description": "Kill 5 Circus Bloats in one game.",
-            "rate": 14.09,
+            "rate": 14.13,
             "event": true
           },
           {
@@ -444,7 +444,7 @@
             "icon": "2bd28a76c391a7c31a0a98e4d316503fccf5b823",
             "name": "Small Hands",
             "description": "Kill 3 Circus Clots in a wave with the Lever Action Rifle.",
-            "rate": 13.82,
+            "rate": 13.86,
             "event": true,
             "perk": "sharpshooter"
           },
@@ -454,7 +454,7 @@
             "icon": "e4b458bc9b18e0f769c63697f095cfb84b7894cb",
             "name": "Sparring with a Master",
             "description": "Kill a Circus Gorefast with a Melee weapon.",
-            "rate": 12.45,
+            "rate": 12.48,
             "event": true,
             "perk": "berserker"
           },
@@ -464,7 +464,7 @@
             "icon": "9c39b2960ec8e72f2479e90b35b44fe6cdc60ad5",
             "name": "Seeing Double",
             "description": "Kill 5 Circus Crawlers with a Bullpup in one wave.",
-            "rate": 8.86,
+            "rate": 8.88,
             "event": true,
             "perk": "commando"
           },
@@ -474,7 +474,7 @@
             "icon": "e5c63e808400cd45c47eb5b0e3b7116aac994b45",
             "name": "Windjammer Enthusiast",
             "description": "Survive 10 seconds after being screamed at by at Circus Siren on Hard or above.",
-            "rate": 8.33,
+            "rate": 8.35,
             "event": true
           },
           {
@@ -483,7 +483,7 @@
             "icon": "455a11ba7d1e4c05139308bb5fdf79b718467cc3",
             "name": "Elephant Gun",
             "description": "Land the killing blow on a Circus Fleshpound with a Pistol.",
-            "rate": 7.42,
+            "rate": 7.44,
             "event": true,
             "perk": "sharpshooter"
           },
@@ -493,7 +493,7 @@
             "icon": "fa9aa734c5fb45cb5d5ee23db2592305508cf3ba",
             "name": "The Big Hunt",
             "description": "Kill a Circus Scrake with a Crossbow.",
-            "rate": 6.83,
+            "rate": 6.85,
             "event": true,
             "perk": "sharpshooter"
           },
@@ -503,7 +503,7 @@
             "icon": "fc6b4134a63b6ec8ac45ffd4f14cd492ff41229e",
             "name": "Burning up the Midway",
             "description": "Kill 10 Circus Clots with a Fire-based weapon.",
-            "rate": 6.21,
+            "rate": 6.23,
             "event": true,
             "perk": "firebug"
           },
@@ -513,7 +513,7 @@
             "icon": "bb80b572b6641a52f3d97c9cf54866b3a4c367b4",
             "name": "Taking Down the Big Top",
             "description": "Kill 4 Circus Zeds in 1 ZED time chain with a Melee weapon.",
-            "rate": 5,
+            "rate": 5.02,
             "event": true,
             "perk": "berserker"
           },
@@ -536,7 +536,7 @@
             "icon": "24e53a657c0564f21844a97a124360b71a731b72",
             "name": "Lifting a Dumbell",
             "description": "Kill a Circus Husk with a LAW.",
-            "rate": 2.44,
+            "rate": 2.45,
             "event": true,
             "perk": "demolition"
           },
@@ -627,7 +627,7 @@
             "icon": "d564f704eb13c8a3e1d9a1a7e31cd051c4ed2804",
             "name": "Assault Flayer Ordinance",
             "description": "Push a scrake back with the direct fire from a Hunting Shotgun or alt fire from the Multi-Chamber ZED Thrower",
-            "rate": 8.13,
+            "rate": 8.14,
             "perk": "support"
           },
           {
@@ -724,7 +724,7 @@
             "icon": "372b78c8dd3d2e6c99372a0695edaff20ea4b833",
             "name": "Mrs. Punkd",
             "description": "Get 4 of 6 of the 2013 Summer Event in-game level Achievements, one Standard and one Objective Mode map completion Achievement, plus the Punk'd Achievement to unlock Steampunk Mrs. Foster",
-            "rate": 0.91,
+            "rate": 0.92,
             "event": true,
             "tips": [
               "Requires <a href=\"#punkd\">Punk'd</a>.",
@@ -744,7 +744,7 @@
             "icon": "56c45bb4c9da52c30cc3963c6d2feea065cce0f6",
             "name": "Oktoberfest Master",
             "description": "Collect all the Beer Steins",
-            "rate": 0.14,
+            "rate": 0.15,
             "tips": [
               "<a href=\"https://www.youtube.com/watch?v=n26l6JfIAJY\">A video guide to the locations</a> by TMPGames."
             ]
@@ -755,7 +755,7 @@
             "icon": "665e640f9b774b3cbf86ed05762ea8905d848489",
             "name": "Rich Evil Uncle",
             "description": "Collect all the Treasure Bags",
-            "rate": 0.08,
+            "rate": 0.09,
             "tips": [
               "<a href=\"https://www.youtube.com/watch?v=2pNISGNhxao\">A video guide to the locations</a> by TMPGames."
             ]
@@ -766,7 +766,7 @@
             "icon": "7b4adee17cff70733a1b91d22d68983b3ab97ee2",
             "name": "Nitro Boost!",
             "description": "Get the Nitro to the Objective in 135 seconds or less",
-            "rate": 0.23
+            "rate": 0.26
           },
           {
             "id": "totally-metal",
@@ -774,7 +774,7 @@
             "icon": "938bfefec4cf3acf86b5c481f04c8bd28b96ca00",
             "name": "Totally Metal",
             "description": "Kill 250 Zeds before completing the welding objective",
-            "rate": 0.33
+            "rate": 0.37
           },
           {
             "id": "multi-pass",
@@ -782,7 +782,7 @@
             "icon": "4361f09d30dc059ec7522b87c33f5feb2624bb72",
             "name": "Multi-pass",
             "description": "Pick up the door key",
-            "rate": 0.53,
+            "rate": 0.58,
             "tips": [
               "Counts for all players when one person picks it up, so impossible to miss."
             ]
@@ -793,7 +793,7 @@
             "icon": "90a115c82fb10954fd4d3068848a48c8bf1645b6",
             "name": "Science Hater",
             "description": "Destroy all the DNA vials",
-            "rate": 0.24,
+            "rate": 0.27,
             "tips": [
               "Easier in normal mode than objective mode, because you can't go back to previous sections of the map. Some of the vials are also moved between modes.",
               "<a href=\"https://www.youtube.com/watch?v=tBOWoolsEpw\">A video guide to the locations</a> by TMPGames."
@@ -805,7 +805,7 @@
             "icon": "851ce452dddb84c5bbf1c94cb461e4090e2827ba",
             "name": "Doctor WHO??",
             "description": "Get all Objective achievements and beat KFO Transit on Hard or above to unlock Dr Rachel Clamely",
-            "rate": 0.1,
+            "rate": 0.12,
             "tips": [
               "Requires all 4 of <a href=\"#nitro-boost\">Nitro Boost!</a>, <a href=\"#totally-metal\">Totally Metal</a>, <a href=\"#multi-pass\">Multi-pass</a>, and <a href=\"#science-hater\">Science Hater</a>.",
               "You also have to beat Transit in <a href=\"#kfo-transit\">objective</a> mode on at least hard difficulty."
@@ -838,7 +838,7 @@
             "icon": "4141d8592164ffeda39c4222f82b8510af6832a3",
             "name": "Carving The Jack O' Lantern",
             "description": "Decapitate a burning Halloween specimen in Bedlam",
-            "rate": 3.58,
+            "rate": 3.57,
             "event": true
           },
           {
@@ -1023,7 +1023,7 @@
             "icon": "7050d94c5bf822758c8f194e4d4a2dbd9795fcf7",
             "name": "777",
             "description": "Win Fuel on the first try",
-            "rate": 0.59,
+            "rate": 0.6,
             "tips": [
               "Basically down to luck. Only the first try of each machine counts, so you only get 2 chances per run.",
               "The map KF-777 on the Steam workshop lets you cheat by spawning many more slot machines."
@@ -1104,7 +1104,7 @@
             "icon": "31350dba7ff054dbc9c866560e906d5be15e2919",
             "name": "Who Brings a Gun to a Snow Ball Fight?",
             "description": "Kill a Christmas Husk with any Pistol.",
-            "rate": 16.8,
+            "rate": 16.79,
             "event": true,
             "perk": "sharpshooter"
           },
@@ -1114,7 +1114,7 @@
             "icon": "555cae553ef16908e8cceba5db58f44d83c9381c",
             "name": "Merry Friggin Christmas",
             "description": "Kill the Christmas Patriarch.",
-            "rate": 16.4,
+            "rate": 16.39,
             "event": true
           },
           {
@@ -1123,7 +1123,7 @@
             "icon": "c5f4c52cb808df05db42c103cdd190331f908db5",
             "name": "Back to Work",
             "description": "Kill 20 Christmas Clots in one wave.",
-            "rate": 14.26,
+            "rate": 14.25,
             "event": true
           },
           {
@@ -1132,7 +1132,7 @@
             "icon": "ff7594a304c3a5f281fa5f8da553f025ef91b9d9",
             "name": "Rudolph, the Bloody Nosed Reindeer",
             "description": "Kill a Christmas Crawler with a Crossbow.",
-            "rate": 8.15,
+            "rate": 8.14,
             "event": true,
             "perk": "sharpshooter"
           },
@@ -1142,7 +1142,7 @@
             "icon": "8d247fb5166b9c96fb7b3e82fbadaf3d559b42a3",
             "name": "Eggnog Anyone?",
             "description": "Get covered in Christmas Bloat Bile and live for 10 seconds on Hard, Suicidal, or Hell on Earth.",
-            "rate": 7.49,
+            "rate": 7.48,
             "event": true
           },
           {
@@ -1269,7 +1269,7 @@
             "icon": "70c580cd2f9472aa5007bb0857275914033eb715",
             "name": "A Bloody Christmas Carol",
             "description": "Kill 15 XMas Clots, 5 xmas Stalkers, 5 XMas Crawlers, 1 XMas Siren and 1 XMas Bloat.",
-            "rate": 17.29,
+            "rate": 17.28,
             "event": true
           },
           {
@@ -1374,7 +1374,7 @@
             "icon": "6eb9e1dc66038ddabab2da97a8cf9d08cc0d5c12",
             "name": "Gimli That Axe!",
             "description": "Get the Not-a-war-hammer Achievement in Dwarfs!?",
-            "rate": 2.18,
+            "rate": 2.17,
             "tips": [
               "Either buy Dwarfs!? or play the free version and collect 40,000 gold, which takes about an hour at most."
             ]

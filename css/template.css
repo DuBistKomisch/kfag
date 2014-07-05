@@ -73,10 +73,18 @@ a
   text-decoration: none;
 }
 
-a:hover
+abbr, a:hover
 {
   border-bottom: #888 2px ridge;
 }
+
+/**
+ * status messages
+ */
+
+.working { color: #ff8; }
+.success { color: #8f8; }
+.error { color: #f88; }
 
 /**
  * tips area
