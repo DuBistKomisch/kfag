@@ -1,4 +1,6 @@
 RewriteEngine  on
-RewriteBase    /kf/
+RewriteBase    /
 RewriteRule    ^id/(.*)$  http://steamcommunity.com/id/$1 [P]
 RewriteRule    ^profiles/(.*)$  http://steamcommunity.com/profiles/$1 [P]
+
+Redirect permanent /kf/kfag.html /kf/
