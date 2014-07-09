@@ -78,6 +78,10 @@ a:hover
   border-bottom: #888 2px ridge;
 }
 
+/**
+ * options area
+ */
+
 .ui-widget
 {
   font-size: 12pt;
@@ -102,6 +106,12 @@ body .ui-tooltip
 {
   padding: 0px 8px;
   line-height: 1.4;
+}
+
+label[for="filter"],
+#filterStatus
+{
+  vertical-align: middle;
 }
 
 /**
