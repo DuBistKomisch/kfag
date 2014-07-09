@@ -1,4 +1,6 @@
 window.mapSortMode = null;
+window.countdown_id = null;
+window.attempts = 0;
 
 $(document).ready(function ()
 {
@@ -39,53 +41,96 @@ $(document).ready(function ()
 
 function filter()
 {
+  // reset retry
+  if (window.countdown_id != null)
+  {
+    clearInterval(window.countdown_id);
+    window.countdown_id = null;
+  }
+  window.attempts = 3;
+
+  $('#filter').val($('#filter').val().trim());
+
   if ($('#filter').val() == '')
   {
+    filter_status('success', '');
     window.user = null;
     update();
     return;
   }
 
-  // try username
-  $('#filterStatus').removeClass().addClass('working').text('Trying as username...');
-  $.get('http://jakebarnes.com.au/id/' + $('#filter').val() + '/statsfeed/1250?xml=1')
+  if (isNaN(Number($('#filter').val())))
+  {
+    // not a number, only try as username
+    get_filter('http://jakebarnes.com.au/id/' + $('#filter').val() + '/statsfeed/1250?xml=1', 'Trying as username...', function ()
+    {
+      filter_status('error', 'Not a valid username.');
+      window.user = null;
+      update();
+    });
+  }
+  else
+  {
+    // number, try as SteamID64 then username
+    get_filter('http://jakebarnes.com.au/profiles/' + $('#filter').val() + '/statsfeed/1250?xml=1', 'Trying as SteamID64...', function ()
+    {
+      get_filter('http://jakebarnes.com.au/id/' + $('#filter').val() + '/statsfeed/1250?xml=1', 'Trying as username...', function ()
+      {
+        filter_status('error', 'Not a valid username or SteamID64.');
+        window.user = null;
+        update();
+      });
+    });
+  }
+}
+
+function get_filter(url, working, missing)
+{
+  filter_status('working', working);
+  $.get(url)
   .done(function (data, statusText, jqXHR)
   {
     if ($(data).find('error').length > 0)
     {
-      $('#filterStatus').removeClass().addClass('working').text('Trying as SteamID64...');
-      $.get('http://jakebarnes.com.au/profiles/' + $('#filter').val() + '/statsfeed/1250?xml=1')
-      .done(function (data, statusText, jqXHR)
-      {
-        if ($(data).find('error').length > 0)
-        {
-          $('#filterStatus').removeClass().addClass('error').text('Not a valid username or SteamID64.');
-          window.user = null;
-          update();
-        }
-        else
-        {
-          $('#filterStatus').removeClass().addClass('success').text('Done.');
-          window.user = data;
-          update();
-        }
-      })
-      .fail(function (jqXHR, statusText, error)
-      {
-        $('#filterStatus').removeClass().addClass('error').text('Steam is busy! Try again soon. [' + jqXHR.status + ': ' + error + ']');
-      });
+      missing();
     }
     else
     {
-      $('#filterStatus').removeClass().addClass('success').text('Done.');
+      filter_status('success', 'Done.');
       window.user = data;
       update();
     }
   })
   .fail(function (jqXHR, statusText, error)
   {
-    $('#filterStatus').removeClass().addClass('error').text('Steam is busy! Try again soon. [' + jqXHR.status + ': ' + error + ']');
+    if (--window.attempts > 0)
+    {
+      var counter = 20;
+      filter_status('error', 'Steam is busy! Trying again in ' + counter + '...');
+      window.countdown_id = setInterval(function ()
+      {
+        if (--counter == 0)
+        {
+          clearInterval(window.countdown_id);
+          window.countdown_id = null;
+          get_filter(url, working, missing);
+        }
+        else
+        {
+          filter_status('error', 'Steam is busy! Trying again in ' + counter + '...');
+        }
+      }, 1000);
+    }
+    else
+    {
+      filter_status('error', 'Steam is busy! Try again later.');
+    }
   });
+}
+
+function filter_status(type, message)
+{
+  $('#filterStatus').removeClass().addClass(type).text(message);
 }
 
 function update()
