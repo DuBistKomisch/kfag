@@ -4,8 +4,10 @@
     <meta charset="utf-8" />
     <title>Killing Floor Achievement Guide</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/template.css" />
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
     <script src="js/purl.js"></script>
     <script src="js/main.js"></script>
   </head>
@@ -53,7 +55,7 @@
       </section>
       <section>
         <h2><a href="#options">Options</a></h2>
-        <p><label>Sort by <select id="sort" name="sort">
+        <p><label for="sort">Sort by <select id="sort" name="sort">
           <option value="rate-desc" selected="selected">rate (descending)</option>
           <option value="rate-asc">rate (ascending)</option>
           <option value="name">name</option>
@@ -62,7 +64,9 @@
         <p><label><input type="checkbox" id="tips" name="tips" /> Show tips</label></p>
         <p><label><input type="checkbox" id="old" name="old" /> Use old icons</label></p>
         <p>
-          <label>Filter by <abbr title="either your username (steamcommunity.com/id/dubistkomisch) or SteamID64 (steamcommunity.com/profiles/76561198030777165)">Steam user</abbr> <input type="text" id="filter" name="filter"></input></label>
+          <label for="filter">Filter by Steam user
+            <input type="text" id="filter" name="filter" title=""></input>
+          </label>
           <button id="filterApply">Apply</button>
           <button id="filterClear">Clear</button>
           <span id="filterStatus"></span>

@@ -73,9 +73,35 @@ a
   text-decoration: none;
 }
 
-abbr, a:hover
+a:hover
 {
   border-bottom: #888 2px ridge;
+}
+
+.ui-widget
+{
+  font-size: 12pt;
+}
+
+body .ui-tooltip
+{
+  max-width: none;
+  background: #888;
+  color: #fff;
+  border: #bbb 1px solid;
+  border-radius: 5px;
+}
+
+.ui-selectmenu-button
+{
+  vertical-align: middle;
+}
+
+.ui-selectmenu-button span.ui-selectmenu-text,
+.ui-button-text-only .ui-button-text
+{
+  padding: 0px 8px;
+  line-height: 1.4;
 }
 
 /**

@@ -13,12 +13,12 @@ $(document).ready(function ()
     });
   });
   
-  $('#sort').change(update);
+  $('#sort').selectmenu({ width: '200px', change: update });
   $('#events').change(update);
   $('#tips').change(tips);
   $('#old').change(update);
-  $('#filterApply').click(filter);
-  $('#filterClear').click(function ()
+  $('#filterApply').button().click(filter);
+  $('#filterClear').button().click(function ()
   {
     $('#filter').val('');
     filter();
@@ -29,6 +29,12 @@ $(document).ready(function ()
   $('#tips').prop('checked', $.url().param('tips') != undefined);
   $('#old').prop('checked', $.url().param('old') != undefined);
   $('#filter').val($.url().param('filter') ? $.url().param('filter') : '');
+
+  $('#filter').addClass('ui-widget ui-corner-all');
+  $('#filter').tooltip({
+    position: { my: "left+10 bottom-10", at: "left top" },
+    content: '<p>Open your Steam profile and copy the last part of the URL.</p><p>steamcommunity.com/id/<span style="font-weight: bold;">dubistkomisch</span></p><p>steamcommunity.com/profiles/<span style="font-weight: bold;">76561198030777165</span></p>'
+  });
 });
 
 function filter()
