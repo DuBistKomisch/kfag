@@ -245,7 +245,7 @@ function processAchievements(list, base)
   
   for (var i = 0; i < list.length; i++)
   {
-    var $achievement = $('<article id="' + list[i].id + '"><div><img src="' + ($('#old').prop('checked') ? 'images/achievements/' + list[i].id : 'http://media.steampowered.com/steamcommunity/public/images/apps/1250/' + list[i].icon) + '.jpg" /><p><span><a href="#' + list[i].id + '">' + list[i].name + '</a></span></p><p><span>' + list[i].description + '</span></p><p><span class="tag">' + list[i].rate + '</span></p></div></article>');
+    var $achievement = $('<article id="' + list[i].id + '"><div><img src="' + ($('#old').prop('checked') ? 'images/achievements/' + list[i].id : 'http://media.steampowered.com/steamcommunity/public/images/apps/1250/' + list[i].icon) + '.jpg" alt="icon" /><h3><a href="#' + list[i].id + '">' + list[i].name + '</a></h3><p>' + list[i].description + '</p><p><span class="tag">' + list[i].rate + '</span></p></div></article>');
     // perk
     if (list[i].perk != undefined)
       $achievement.find('div:nth-of-type(1)').addClass(list[i].perk);
@@ -259,7 +259,7 @@ function processAchievements(list, base)
       $rate.addClass('hard');
     // event
     if (list[i].event != undefined)
-      $achievement.find('div:nth-of-type(1) p:nth-of-type(3)').prepend('<span class="tag event">&nbsp;</span>');
+      $achievement.find('div:nth-of-type(1) p:nth-of-type(2)').prepend('<span class="tag event">&nbsp;</span>');
     // tips
     if (list[i].tips != undefined)
     {
@@ -363,6 +363,8 @@ function processMaps(list, base)
         $map.append($('<td>&#x2714;</td>'));
       else
         $map.append($('<td><span class="tag ' + (list[i].rate[j] >= 4 ? 'easy' : (list[i].rate[j] >= 2 ? 'medium' : 'hard')) + '">' + list[i].rate[j] + '</span></td>'));
+    if (list[i].nohoe != undefined)
+      $map.append($('<td>&mdash;</td>'));
     base.append($map);
   }
 }
