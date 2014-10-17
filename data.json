@@ -1105,7 +1105,7 @@
             "api": "destroyskulls",
             "icon": "392c97b6620e991b9ebe1e1767172fa17acc6693",
             "name": "Skull Cracker",
-            "description": "Destroy all 30 Skull",
+            "description": "Destroy all 30 Skulls",
             "rate": 0.03,
             "tips": [
               "<a href=\"https://www.youtube.com/watch?v=qbFGinf6Ysc\">A video guide to the locations</a> by TMPGames."
