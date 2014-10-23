@@ -12,7 +12,7 @@ $(document).ready(function ()
     {
       window.maps = data;
       filter();
-      document.location = document.location.hash;
+      document.location.hash = document.location.hash;
     });
   });
   
