@@ -62,45 +62,63 @@ function filter()
 
   if (isNaN(Number($('#filter').val())))
   {
-    // not a number, only try as username
-    get_filter('http://jakebarnes.com.au/id/' + $('#filter').val() + '/statsfeed/1250?xml=1', 'Trying as username...', function ()
+    // not a number, assume username and resolve to SteamID64
+    get_filter('http://jakebarnes.com.au/ISteamUser/ResolveVanityURL/v0001/?key=80425AE7E1845E2B033ECA38E8F7BCBE&vanityurl=' + $('#filter').val(), 'Resolving username...', function (data)
     {
-      filter_status('error', 'Not a valid username.');
-      window.user = null;
-      update();
+      if (data.response.steamid != undefined)
+      {
+        get_filter('http://jakebarnes.com.au/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1250&key=80425AE7E1845E2B033ECA38E8F7BCBE&steamid=' + data.response.steamid, 'Fetching user stats...', function (data)
+        {
+          if (data.playerstats != undefined)
+          {
+            filter_status('success', 'Done.');
+            window.user = data.playerstats;
+            update();
+          }
+          else
+          {
+            filter_status('error', 'Not a valid SteamID64.');
+            window.user = null;
+            update();
+          }
+        });
+      }
+      else
+      {
+        filter_status('error', 'Not a valid username.');
+        window.user = null;
+        update();
+      }
     });
   }
   else
   {
-    // number, try as SteamID64 then username
-    get_filter('http://jakebarnes.com.au/profiles/' + $('#filter').val() + '/statsfeed/1250?xml=1', 'Trying as SteamID64...', function ()
+    // number, assume SteamID64
+    get_filter('http://jakebarnes.com.au/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1250&key=80425AE7E1845E2B033ECA38E8F7BCBE&steamid=' + $('#filter').val(), 'Fetching user stats...', function (data)
     {
-      get_filter('http://jakebarnes.com.au/id/' + $('#filter').val() + '/statsfeed/1250?xml=1', 'Trying as username...', function ()
+      if (data.playerstats != undefined)
       {
-        filter_status('error', 'Not a valid username or SteamID64.');
+        filter_status('success', 'Done.');
+        window.user = data.playerstats;
+        update();
+      }
+      else
+      {
+        filter_status('error', 'Not a valid SteamID64.');
         window.user = null;
         update();
-      });
+      }
     });
   }
 }
 
-function get_filter(url, working, missing)
+function get_filter(url, working, success)
 {
   filter_status('working', working);
   $.get(url)
   .done(function (data, statusText, jqXHR)
   {
-    if ($(data).find('error').length > 0)
-    {
-      missing();
-    }
-    else
-    {
-      filter_status('success', 'Done.');
-      window.user = data;
-      update();
-    }
+    success(data);
   })
   .fail(function (jqXHR, statusText, error)
   {
@@ -114,7 +132,7 @@ function get_filter(url, working, missing)
         {
           clearInterval(window.countdown_id);
           window.countdown_id = null;
-          get_filter(url, working, missing);
+          get_filter(url, working, success);
         }
         else
         {
@@ -166,6 +184,18 @@ function tips()
     $('article.tips').css('padding-bottom', '0px');
     $('article > p').css('display', 'none');
   }
+
+  // only place reached when changing any option
+  var link = window.location.protocol + '//' + window.location.hostname + window.location.pathname + '?sort=' + $('#sort').val();
+  if ($('#events').prop('checked'))
+    link += '&events';
+  if ($('#tips').prop('checked'))
+    link += '&tips';
+  if ($('#old').prop('checked'))
+    link += '&old';
+  if ($('#filter').val() != '')
+    link += '&filter=' + $('#filter').val();
+  $('#bookmark').prop('href', link);
 }
 
 function sortRateDesc(a, b)
@@ -278,13 +308,28 @@ function processAchievements(list, base)
       }
       else
       {
-        var count = Number($(window.user).find('APIName:contains(' + list[i].count + ')').first().next('value').text());
+        var count = 0;
+        $.each(window.user.stats, function (j, obj)
+        {
+          if (obj.name.toLowerCase() == list[i].count)
+            count = obj.value;
+        });
         $achievement.find('div:nth-of-type(1)').append('<p><span style="width:' + Math.min(100, Math.round(count / list[i].max * 100)) + 'px;"></span><span>' + count + '</span><span>' + list[i].max + '</span></p>');
       }
     }
+    // filter
+    if (window.user != null)
+    {
+      var found = false;
+      $.each(window.user.achievements, function (j, obj)
+      {
+        if (obj.name.toLowerCase() == list[i].api)
+          found = true;
+      });
+      if (found)
+        continue;
+    }
     // done
-    if (window.user != null && list[i].api != undefined && $(window.user).find('APIName:contains(' + list[i].api + ')').next('value').text() != '0')
-      continue;
     base.append($achievement);
   }
 }
@@ -359,11 +404,23 @@ function processMaps(list, base)
   {
     var $map = $('<tr id="' + list[i].id + '"><td class="map"><a href="#' + list[i].id + '">' + list[i].name + '</a>' + (list[i].kfo != undefined ? '<span class="kfo">KFO</span>' : '') + '</td></tr>');
     for (var j = 0; j < (list[i].nohoe != undefined ? 3 : 4); j++)
-      if (window.user != null && list[i].api != undefined
-      && $(window.user).find('APIName:contains(' + ($.isArray(list[i].api) ? list[i].api[j] : 'win' + list[i].api + ['normal', 'hard', 'suicidal', 'hell'][j]) + ')').next('value').text() != '0')
-        $map.append($('<td>&#x2714;</td>'));
-      else
-        $map.append($('<td><span class="tag ' + (list[i].rate[j] >= 4 ? 'easy' : (list[i].rate[j] >= 2 ? 'medium' : 'hard')) + '">' + list[i].rate[j] + '</span></td>'));
+    {
+      if (window.user != null)
+      {
+        var found = false;
+        $.each(window.user.achievements, function (k, obj)
+        {
+          if (obj.name.toLowerCase() == ($.isArray(list[i].api) ? list[i].api[j] : 'win' + list[i].api + ['normal', 'hard', 'suicidal', 'hell'][j]))
+            found = true;
+        });
+        if (found)
+        {
+          $map.append($('<td>&#x2714;</td>'));
+          continue;
+        }
+      }
+      $map.append($('<td><span class="tag ' + (list[i].rate[j] >= 4 ? 'easy' : (list[i].rate[j] >= 2 ? 'medium' : 'hard')) + '">' + list[i].rate[j] + '</span></td>'));
+    }
     if (list[i].nohoe != undefined)
       $map.append($('<td>&mdash;</td>'));
     base.append($map);
