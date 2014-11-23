@@ -36,7 +36,7 @@ $(document).ready(function ()
   $('#filter').addClass('ui-widget ui-corner-all');
   $('#filter').tooltip({
     position: { my: "left+10 bottom-10", at: "left top" },
-    content: '<p>Open your Steam profile and copy the last part of the URL.</p><p>steamcommunity.com/id/<span style="font-weight: bold;">dubistkomisch</span></p><p>steamcommunity.com/profiles/<span style="font-weight: bold;">76561198030777165</span></p>'
+    content: '<p>Open your Steam profile and copy the last part of the URL.</p><p>steamcommunity.com/id/<span style="font-weight: bold;">dubistkomisch</span></p><p>steamcommunity.com/profiles/<span style="font-weight: bold;">76561198030777165</span></p><p style="color:red;font-style:italic;">Your profile must be public.</p>'
   });
 });
 
