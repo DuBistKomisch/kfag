@@ -335,7 +335,8 @@ article div:nth-of-type(1) p:nth-of-type(3) span:nth-of-type(3)
 
 #maps th.division
 {
-  text-indent: 10px;
+  padding-top: 10px;
+  text-indent: 20px;
   text-align: left;
   
   font-style: italic;
