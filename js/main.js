@@ -17,7 +17,7 @@ $(document).ready(function ()
   });
   
   $('#sort').selectmenu({ width: '200px', change: update });
-  $('#events').change(update);
+  $('#group').selectmenu({ width: '200px', change: update });
   $('#tips').change(tips);
   $('#old').change(update);
   $('#filterApply').button().click(filter);
@@ -28,7 +28,7 @@ $(document).ready(function ()
   });
   
   $('#sort').val($.url().param('sort') ? $.url().param('sort') : 'rate-desc').selectmenu('refresh', true);
-  $('#events').prop('checked', $.url().param('events') != undefined);
+  $('#group').val($.url().param('group') ? $.url().param('group') : 'none').selectmenu('refresh', true);
   $('#tips').prop('checked', $.url().param('tips') != undefined);
   $('#old').prop('checked', $.url().param('old') != undefined);
   $('#filter').val($.url().param('filter') ? $.url().param('filter') : '');
@@ -156,15 +156,59 @@ function update()
 {
   $('#achievements').empty();
   
-  if ($('#events').prop('checked'))
+  switch ($('#group').val())
   {
-    processSections(window.data, $('#achievements'), 'h1');
-  }
-  else
-  {
-    var $section = $('<section id="all"><h1><a href="#all">All</a></h1></section>');
-    processAll(window.data, $section);
-    $('#achievements').append($section);
+    case 'none':
+      var $section = $('<section id="all"><h1><a href="#all">All</a></h1></section>');
+      var achievements = [];
+      for (var i = 0; i < window.data.length; i++)
+      {
+        // achievements
+        if (window.data[i].data != undefined)
+          achievements = achievements.concat(window.data[i].data);
+        // subsections
+        if (window.data[i].children != undefined)
+          for (var j = 0; j < window.data[i].children.length; j++)
+            if (window.data[i].children[j].data != undefined)
+              achievements = achievements.concat(window.data[i].children[j].data);
+      }
+      processAchievements(achievements, $section);
+      $('#achievements').append($section);
+      break;
+    case 'event':
+      processSections(window.data, $('#achievements'), 'h1');
+      break;
+    case 'perk':
+      var perks = ['medic', 'support', 'sharpshooter', 'commando', 'berserker', 'firebug', 'demolition', 'none'];
+      var achievements = {};
+      for (var i = 0; i < perks.length; i++)
+        achievements[perks[i]] = [];
+      for (var i = 0; i < window.data.length; i++)
+      {
+        // achievements
+        if (window.data[i].data != undefined)
+          for (var k = 0; k < window.data[i].data.length; k++)
+          {
+            var record = window.data[i].data[k];
+            achievements[record.perk != undefined ? record.perk : 'none'].push(record);
+          }
+        // subsections
+        if (window.data[i].children != undefined)
+          for (var j = 0; j < window.data[i].children.length; j++)
+            if (window.data[i].children[j].data != undefined)
+              for (var k = 0; k < window.data[i].children[j].data.length; k++)
+              {
+                var record = window.data[i].children[j].data[k];
+                achievements[record.perk != undefined ? record.perk : 'none'].push(record);
+              }
+      }
+      for (var i = 0; i < perks.length; i++)
+      {
+        var $section = $('<section id="' + perks[i] + '"><h1><a href="#' + perks[i] + '">' + perks[i].charAt(0).toUpperCase() + perks[i].substr(1) + '</a></h1></section>');
+        processAchievements(achievements[perks[i]], $section);
+        $('#achievements').append($section);
+      }
+      break;
   }
   
   tips();
@@ -186,9 +230,7 @@ function tips()
   }
 
   // only place reached when changing any option
-  var link = window.location.protocol + '//' + window.location.hostname + window.location.pathname + '?sort=' + $('#sort').val();
-  if ($('#events').prop('checked'))
-    link += '&events';
+  var link = window.location.protocol + '//' + window.location.hostname + window.location.pathname + '?sort=' + $('#sort').val() + '&group=' + $('#group').val();
   if ($('#tips').prop('checked'))
     link += '&tips';
   if ($('#old').prop('checked'))
@@ -240,23 +282,6 @@ function processSections(list, base, level)
     if ($section.children().length > 1)
       base.append($section);
   }
-}
-
-function processAll(list, base)
-{
-  var achievements = [];
-  for (var i = 0; i < list.length; i++)
-  {
-    // achievements
-    if (list[i].data != undefined)
-      achievements = achievements.concat(list[i].data);
-    // subsections
-    if (list[i].children != undefined)
-      for (var j = 0; j < list[i].children.length; j++)
-        if (list[i].children[j].data != undefined)
-          achievements = achievements.concat(list[i].children[j].data);
-  }
-  processAchievements(achievements, base);
 }
 
 function processAchievements(list, base)
@@ -339,7 +364,7 @@ function update_maps()
   var $base = $("#maps tbody");
   $base.empty();
   
-  if ($('#events').prop('checked'))
+  if ($('#group').val() == 'event')
   {
     for (var i = 0; i < window.maps.length; i++)
     {
