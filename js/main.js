@@ -206,7 +206,8 @@ function update()
       {
         var $section = $('<section id="' + perks[i] + '"><h1><a href="#' + perks[i] + '">' + perks[i].charAt(0).toUpperCase() + perks[i].substr(1) + '</a></h1></section>');
         processAchievements(achievements[perks[i]], $section);
-        $('#achievements').append($section);
+        if ($section.children().length > 1)
+          $('#achievements').append($section);
       }
       break;
   }
