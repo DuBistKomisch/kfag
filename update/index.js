@@ -1,6 +1,5 @@
 var fs = require('fs');
 var http = require('http');
-var util = require('util');
 
 var DATA_FILE = '../data.json';
 var MAPS_FILE = '../maps.json';
@@ -9,16 +8,16 @@ http.get({host: 'api.steampowered.com', path: '/ISteamUserStats/GetGlobalAchieve
   var response = '';
   res.on('data', function (chunk) {
     response += chunk;
-    util.print('downloading ' + Math.round(response.length / res.headers['content-length'] * 100) + '%\r');
+    process.stdout.write('downloading ' + Math.round(response.length / res.headers['content-length'] * 100) + '%\r');
   }).on('end', function () {
     console.log();
-    process(response);
+    go(response);
   });
 }).on('error', function (e) {
   console.log('error: ' + e.message);
 });
 
-function process(response)
+function go(response)
 {
   // get steam data
   var tree = JSON.parse(response);
